@@ -1,12 +1,12 @@
 package com.softserveinc.chessboard;
 
-import com.softserveinc.util.Util;
+import com.softserveinc.util.ConsoleUtil;
 
 import java.util.Scanner;
 
 public class ChessboardHandler {
 
-    public void handle() {
+    public static void handle() {
         Scanner scr = new Scanner(System.in);
         boolean shouldContinue = true;
         while (shouldContinue) {
@@ -17,7 +17,7 @@ public class ChessboardHandler {
             System.out.println("Enter symbol: ");
             String symbol = scr.next();
             System.out.println(new Chessboard(symbol, height, width).build());
-            shouldContinue = Util.confirmation("Do you want to build one more chessboard?");
+            shouldContinue = ConsoleUtil.confirmation("Do you want to build one more chessboard?");
         }
     }
 
