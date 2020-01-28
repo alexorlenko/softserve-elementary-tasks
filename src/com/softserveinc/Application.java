@@ -6,7 +6,7 @@ public class Application {
 
     public static void main(String[] args) {
         System.out.println("Welcome to the softserve-elementary-tasks application!");
-        ConsoleUtil.selectTask("Selecting number tasks");
+        ConsoleUtil.selectTask("Select task number:");
     }
 
 }

@@ -34,7 +34,7 @@ public class ConsoleUtil {
             while (shouldContinueSelection) {
                 System.out.println(tasks + " \n"
                         + "1. Chessboard." + "\n"
-                        + "2. EnvelopeHandler."
+                        + "2. Envelope."
                 );
                 int number = scr.nextInt();
                 switch (number) {

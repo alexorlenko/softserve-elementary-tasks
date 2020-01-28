@@ -2,59 +2,46 @@ package com.softserveinc.envelope;
 
 public class Envelope {
 
-    private float a;
-    private float b;
-    private float c;
-    private float d;
+    private float firstSide;
+    private float secondSide;
 
-    Envelope(float a, float b, float c, float d) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-        this.d = d;
+    Envelope() {
     }
 
-    void compare() {
-        if (a > c && b > d) {
-            System.out.println("EnvelopeHandler number 1 is included in envelope number 2!");
-        } else if (c > a && d > b) {
-            System.out.println("EnvelopeHandler number 2 is included in envelope number 1!");
-        } else if (a == c && b == d) {
-            System.out.println("Envelopes are equal!");
+    Envelope(float firstSide, float secondSide) {
+        this.firstSide = firstSide;
+        this.secondSide = secondSide;
+    }
+
+    void compare(Envelope firstEnvelope, Envelope secondEnvelope) {
+        if (firstEnvelope.getFirstSide() > secondEnvelope.getFirstSide()
+                && firstEnvelope.getSecondSide() > secondEnvelope.getSecondSide()) {
+            System.out.println("Second envelope can be placed into the first one.");
+        } else if (firstEnvelope.getFirstSide() < secondEnvelope.getFirstSide()
+                && firstEnvelope.getSecondSide() < secondEnvelope.getSecondSide()) {
+            System.out.println("First envelope can be placed into the second one.");
+        } else if (firstEnvelope.getFirstSide() == secondEnvelope.getFirstSide()
+                && firstEnvelope.getSecondSide() == secondEnvelope.getSecondSide()) {
+            System.out.println("Envelopes are equal.");
         } else {
-            System.out.println("Not one of the envelope is included in another!");
+            System.out.println("Envelopes can't be included into each other.");
         }
     }
 
-    public float getA() {
-        return a;
+    public float getFirstSide() {
+        return firstSide;
     }
 
-    public void setA(float a) {
-        this.a = a;
+    public void setFirstSide(float firstSide) {
+        this.firstSide = firstSide;
     }
 
-    public float getB() {
-        return b;
+    public float getSecondSide() {
+        return secondSide;
     }
 
-    public void setB(float b) {
-        this.b = b;
+    public void setSecondSide(float secondSide) {
+        this.secondSide = secondSide;
     }
 
-    public float getC() {
-        return c;
-    }
-
-    public void setC(float c) {
-        this.c = c;
-    }
-
-    public float getD() {
-        return d;
-    }
-
-    public void setD(float d) {
-        this.d = d;
-    }
 }
