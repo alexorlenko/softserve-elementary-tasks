@@ -1,4 +1,4 @@
-package com.softserveinc.chessboard;
+package com.softserveinc.model;
 
 public class Chessboard {
 
@@ -6,28 +6,14 @@ public class Chessboard {
     private int height;
     private int width;
 
-    Chessboard(String symbol, int height, int width){
+    public Chessboard(String symbol, int height, int width) {
         this.symbol = symbol;
         this.height = height;
         this.width = width;
     }
 
-    StringBuilder build(){
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                if ((i + j) % 2 == 1) {
-                    result.append(" ");
-                } else {
-                    result.append(symbol);
-                }
-            }
-            result.append("\n");
-        }
-        return result;
-    }
-
     public String getSymbol() {
+
         return symbol;
     }
 
@@ -36,6 +22,7 @@ public class Chessboard {
     }
 
     public int getHeight() {
+
         return height;
     }
 
@@ -44,6 +31,7 @@ public class Chessboard {
     }
 
     public int getWidth() {
+
         return width;
     }
 
