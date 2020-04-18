@@ -1,11 +1,11 @@
-package com.softserveinc.service;
+package com.softserveinc.main.service.implementation;
 
-import com.softserveinc.model.Chessboard;
+import com.softserveinc.main.model.Chessboard;
+import com.softserveinc.main.service.ChessboardApi;
 //джавадоки пишутся к класам и методом (что содержат логику), но не к гетера сеттерам, конструкторам и полям
 /**
  * сервис содержит методы которые работают с доской
  */
-
 public class ChessboardService implements ChessboardApi {
 
     /**
@@ -13,19 +13,20 @@ public class ChessboardService implements ChessboardApi {
      * @param chessboard
      * @return StringBuilder object, that contains built board
      */
-
     @Override
     public StringBuilder build(Chessboard chessboard) {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < chessboard.getHeight(); i++) {
-            for (int j = 0; j < chessboard.getWidth(); j++) {
+        for (int i = 1; i <= chessboard.getHeight(); i++) {
+            for (int j = 1; j <= chessboard.getWidth(); j++) {
                 if ((i + j) % 2 == 1) {
                     result.append(" ");
                 } else {
                     result.append(chessboard.getSymbol());
                 }
             }
-            result.append("\n");
+            if(i != chessboard.getHeight()) {
+                result.append("\n");
+            }
         }
         return result;
     }

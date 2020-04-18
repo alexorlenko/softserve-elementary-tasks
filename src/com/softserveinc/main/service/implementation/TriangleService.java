@@ -1,6 +1,7 @@
-package com.softserveinc.service;
+package com.softserveinc.main.service.implementation;
 
-import com.softserveinc.model.Triangle;
+import com.softserveinc.main.model.Triangle;
+import com.softserveinc.main.service.TriangleApi;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.softserveinc.service;
+package com.softserveinc.main.service;
 
-import com.softserveinc.model.Chessboard;
+import com.softserveinc.main.model.Chessboard;
 
 public interface ChessboardApi {
     

@@ -1,22 +1,23 @@
-package com.softserveinc.service;
+package com.softserveinc.main.service.implementation;
 
-import com.softserveinc.model.Envelope;
+import com.softserveinc.main.model.Envelope;
+import com.softserveinc.main.service.EnvelopeApi;
 
 public class EnvelopeService implements EnvelopeApi {
 
     @Override
-    public void compare(Envelope envelope){
+    public int compare(Envelope envelope){
         if (envelope.getFirstSideOfFirstEnvelope() > envelope.getFirstSideOfSecondEnvelope()
                 && envelope.getSecondSideOfFirstEnvelope() > envelope.getSecondSideOfSecondEnvelope()) {
-            System.out.println("Second service can be placed into the first one.");
+            return 1;
         } else if (envelope.getFirstSideOfFirstEnvelope() < envelope.getFirstSideOfSecondEnvelope()
                 && envelope.getSecondSideOfFirstEnvelope() < envelope.getSecondSideOfSecondEnvelope()) {
-            System.out.println("First service can be placed into the second one.");
+            return 2;
         } else if (envelope.getFirstSideOfFirstEnvelope() == envelope.getFirstSideOfSecondEnvelope()
                 && envelope.getSecondSideOfFirstEnvelope() == envelope.getSecondSideOfSecondEnvelope()) {
-            System.out.println("Envelopes are equal.");
+            return 0;
         } else {
-            System.out.println("Envelopes can't be included into each other.");
+            return -1;
         }
     }
 }

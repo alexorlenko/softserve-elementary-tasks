@@ -1,4 +1,4 @@
-package com.softserveinc.model;
+package com.softserveinc.main.model;
 
 public class Chessboard {
 

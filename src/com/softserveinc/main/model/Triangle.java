@@ -1,27 +1,27 @@
-package com.softserveinc.model;
+package com.softserveinc.main.model;
 
 public class Triangle implements Comparable<Triangle> {
 
     private String name;
-    private float firstSideLength;
-    private float secondSideLength;
-    private float thirdSideLength;
-    private float perimeter;
-    private float square;
+    private double firstSideLength;
+    private double secondSideLength;
+    private double thirdSideLength;
+    private double perimeter;
+    private double square;
 
-    public Triangle(String name, float firstSideLength, float secondSideLength, float thirdSideLength) {
+    public Triangle(String name, double firstSideLength, double secondSideLength, double thirdSideLength) {
         this.name = name;
         this.firstSideLength = firstSideLength;
         this.secondSideLength = secondSideLength;
         this.thirdSideLength = thirdSideLength;
         this.perimeter = (firstSideLength + secondSideLength + thirdSideLength) / 2;
-        this.square =  (float) Math.sqrt(perimeter * (perimeter - firstSideLength) *
-                (perimeter - secondSideLength) * (perimeter - thirdSideLength));
+        this.square = Math.round((Math.sqrt(perimeter * (perimeter - firstSideLength) *
+                (perimeter - secondSideLength) * (perimeter - thirdSideLength))) * 100.0) / 100.0;
     }
 
     @Override
     public int compareTo(Triangle triangle) {
-        return Float.compare(this.getSquare(), triangle.getSquare());
+        return Double.compare(this.getSquare(), triangle.getSquare());
     }
 
     @Override
@@ -37,43 +37,43 @@ public class Triangle implements Comparable<Triangle> {
         this.name = name;
     }
 
-    public float getFirstSideLength() {
+    public double getFirstSideLength() {
         return firstSideLength;
     }
 
-    public void setFirstSideLength(float firstSideLength) {
+    public void setFirstSideLength(double firstSideLength) {
         this.firstSideLength = firstSideLength;
     }
 
-    public float getSecondSideLength() {
+    public double getSecondSideLength() {
         return secondSideLength;
     }
 
-    public void setSecondSideLength(float secondSideLength) {
+    public void setSecondSideLength(double secondSideLength) {
         this.secondSideLength = secondSideLength;
     }
 
-    public float getThirdSideLength() {
+    public double getThirdSideLength() {
         return thirdSideLength;
     }
 
-    public void setThirdSideLength(float thirdSideLength) {
+    public void setThirdSideLength(double thirdSideLength) {
         this.thirdSideLength = thirdSideLength;
     }
 
-    public float getPerimeter() {
+    public double getPerimeter() {
         return perimeter;
     }
 
-    public void setPerimeter(float perimeter) {
+    public void setPerimeter(double perimeter) {
         this.perimeter = perimeter;
     }
 
-    public float getSquare() {
+    public double getSquare() {
         return square;
     }
 
-    public void setSquare(float square) {
+    public void setSquare(double square) {
         this.square = square;
     }
 }
